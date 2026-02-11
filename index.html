@@ -1,13 +1,3 @@
-<script>
-  atOptions = {
-    'key' : 'f1ffb9fb042c3057b8db20d3d46c520d',
-    'format' : 'iframe',
-    'height' : 60,
-    'width' : 468,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/f1ffb9fb042c3057b8db20d3d46c520d/invoke.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +16,7 @@
         height: 100vh;
         transition: background 0.3s;
     }
-    
+
     /* App container */
     .app-container {
         width: 95%;
@@ -40,7 +30,7 @@
         flex-direction: column;
         transition: background 0.3s;
     }
-    
+
     /* Header */
     .app-header {
         background: #4CAF50;
@@ -52,7 +42,7 @@
         position: relative;
         transition: background 0.3s, color 0.3s;
     }
-    
+
     /* Theme toggle button */
     .theme-toggle {
         position: absolute;
@@ -69,45 +59,81 @@
         font-weight: bold;
         transition: background 0.3s, color 0.3s;
     }
-    
-    /* Webview / iframe container */
+
+    /* iframe content */
     .app-content {
         flex: 1;
         border: none;
+        width: 100%;
     }
-    
-    /* Dark mode styles */
-    .dark body {
+
+    /* Ad container */
+    .ad-container {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        border-top: 1px solid #ccc;
+        flex-shrink: 0;
+    }
+
+    /* Dark mode */
+    body.dark {
         background: #121212;
     }
-    .dark .app-container {
+    body.dark .app-container {
         background: #1e1e1e;
         box-shadow: 0 8px 25px rgba(0,0,0,0.6);
     }
-    .dark .app-header {
+    body.dark .app-header {
         background: #333;
         color: #fff;
     }
-    .dark .theme-toggle {
+    body.dark .theme-toggle {
         background: #fff;
         color: #333;
     }
+    body.dark .ad-container {
+        background: #1e1e1e;
+        border-top: 1px solid #444;
+    }
 </style>
 </head>
-    <script src="https://pl28693671.effectivegatecpm.com/e7/a6/44/e7a644648e076734ae8fcafca63c38a7.js"></script>
+  <script src="https://pl28693671.effectivegatecpm.com/e7/a6/44/e7a644648e076734ae8fcafca63c38a7.js"></script>
 <body>
-    
 <div class="app-container">
     <div class="app-header">
         Shailesh Memes App
         <button class="theme-toggle">Dark</button>
     </div>
+
     <iframe class="app-content" src="https://www.myinstants.com/en/index/us/" allowfullscreen></iframe>
+
+    <div class="ad-container">
+        <script>
+          atOptions = {
+            'key' : 'f1ffb9fb042c3057b8db20d3d46c520d',
+            'format' : 'iframe',
+            'height' : 60,
+            'width' : 468,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/f1ffb9fb042c3057b8db20d3d46c520d/invoke.js"></script>
+    </div>
 </div>
 
 <script>
     const toggleBtn = document.querySelector('.theme-toggle');
-    let darkMode = false;
+    let darkMode = localStorage.getItem('darkMode') === 'true';
+
+    // Apply saved mode on load
+    if(darkMode) {
+        document.body.classList.add('dark');
+        toggleBtn.textContent = 'Light';
+    }
 
     toggleBtn.addEventListener('click', () => {
         darkMode = !darkMode;
@@ -118,8 +144,8 @@
             document.body.classList.remove('dark');
             toggleBtn.textContent = 'Dark';
         }
+        localStorage.setItem('darkMode', darkMode);
     });
 </script>
-    
 </body>
 </html>
