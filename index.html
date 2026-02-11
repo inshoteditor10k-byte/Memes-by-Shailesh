@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shailesh Memes App</title>
+<style>
+    /* Reset & body styling */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Arial', sans-serif;
+        background: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        transition: background 0.3s;
+    }
+
+    /* App container */
+    .app-container {
+        width: 95%;
+        max-width: 500px;
+        height: 90%;
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        transition: background 0.3s;
+    }
+
+    /* Header */
+    .app-header {
+        background: #4CAF50;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        position: relative;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        color: #4CAF50;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        font-weight: bold;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    /* Webview / iframe container */
+    .app-content {
+        flex: 1;
+        border: none;
+    }
+
+    /* Dark mode styles */
+    .dark body {
+        background: #121212;
+    }
+    .dark .app-container {
+        background: #1e1e1e;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    }
+    .dark .app-header {
+        background: #333;
+        color: #fff;
+    }
+    .dark .theme-toggle {
+        background: #fff;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+
+<div class="app-container">
+    <div class="app-header">
+        Shailesh Memes App
+        <button class="theme-toggle">Dark</button>
+    </div>
+    <iframe class="app-content" src="https://www.myinstants.com/en/index/us/" allowfullscreen></iframe>
+</div>
+
+<script>
+    const toggleBtn = document.querySelector('.theme-toggle');
+    let darkMode = false;
+
+    toggleBtn.addEventListener('click', () => {
+        darkMode = !darkMode;
+        if(darkMode){
+            document.body.classList.add('dark');
+            toggleBtn.textContent = 'Light';
+        } else {
+            document.body.classList.remove('dark');
+            toggleBtn.textContent = 'Dark';
+        }
+    });
+</script>
+
+</body>
+</html>
